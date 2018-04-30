@@ -1,13 +1,27 @@
 var gulp         = require('gulp'),
-		sass         = require('gulp-sass'),
-		autoprefixer = require('gulp-autoprefixer'),
-		minifycss    = require('gulp-minify-css'),
-		rename       = require('gulp-rename'),
-		browserSync  = require('browser-sync').create(),
-		jade         = require('gulp-jade'),
-		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglifyjs'),
-		spritesmith  = require('gulp.spritesmith');
+	sass         = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	minifycss    = require('gulp-minify-css'),
+	rename       = require('gulp-rename'),
+	browserSync  = require('browser-sync').create(),
+	jade         = require('gulp-jade'),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglifyjs'),
+	spritesmith  = require('gulp.spritesmith'),
+	imagemin	 = require('gulp-imagemin'),
+	pngquant     = require('imagemin-pngquant'),
+	cache        = require('gulp-cache');
+		
+gulp.task('img', function() {
+    return gulp.src('dev/img/**/*')
+        .pipe(cache(imagemin({  
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('app/assets/img'));
+});
 
 gulp.task('browser-sync', ['styles', 'scripts', 'jade'], function() {
 		browserSync.init({
@@ -72,4 +86,4 @@ gulp.task('watch', function () {
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['jade', 'sprite', 'styles', 'scripts', 'browser-sync', 'watch']);
+gulp.task('default', ['jade', 'img', 'sprite', 'styles', 'scripts', 'browser-sync', 'watch']);

@@ -16,7 +16,11 @@
     "gulp.spritesmith": "^6.9.0",
     "node-bourbon": "^4.2.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-cache": "^1.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "imagemin-pngquant": "^5.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
