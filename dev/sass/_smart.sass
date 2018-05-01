@@ -1,0 +1,31 @@
+.smart
+  width: 894px
+  margin: auto
+  display: flex
+  flex-direction: column
+  &__wrapper
+    width: 100vw
+    height: 844px
+    background-color: #f1f1f1
+  &__title
+    padding-top: 145px
+    text-align: center
+    text-transform: uppercase
+    font-size: 24px
+    margin-bottom: 65px
+    @include RLight
+  &__desc
+    display: flex
+    justify-content: space-between
+    &__block
+      width: 250px
+      text-align: center
+      &__title
+        @include RLight
+        font-size: 16px
+        text-transform: uppercase
+        margin: 55px 0 30px
+      &__subtitle
+        @include RLight
+        max-height: 153px
+        overflow: hidden

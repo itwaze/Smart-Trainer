@@ -1,0 +1,87 @@
+.slider
+  width: 950px
+  margin: auto
+  padding-top: 50px
+  position: relative
+  &__wrapper
+    width: 100vw
+    height: 452px
+    background-color: #ff9600
+  &__title
+    text-transform: uppercase
+    @include FLight
+    width: 290px
+    position: absolute
+    top: 90px
+    left: 572px
+  &__btn
+    text-transform: uppercase
+    position: absolute
+    bottom: 120px
+    left: 572px
+    background-color: #000
+    color: #fff
+    width: 230px
+    line-height: 30px
+    font-size: 14px
+    text-decoration: none
+    text-align: center
+    z-index: 999
+    @include RLight
+.slick-dots
+  transform: rotate(90deg)
+  left: 95px
+  bottom: 250px
+
+.slick-dots li
+  transform: rotate(-90deg)
+  margin: 0
+  padding-left: 10px
+  @include RLight
+
+.slick-dots li button:before
+  opacity: 0
+  content: ''
+  background-color: #2fa8e8
+  border-radius: 50%
+  width: 7px
+  height: 7px
+
+.slick-dots li::before
+  text-align: left
+
+.slick-dots li:nth-child(1)::before
+  content: 'Функциональные тренировки'
+  position: absolute
+  bottom: 7px
+  width: 240px
+
+.slick-dots li:nth-child(2)::before
+  content: 'Скандинавская ходьба'
+  position: absolute
+  bottom: 7px
+  width: 240px
+
+.slick-dots li:nth-child(3)::before
+  content: 'Велопробеги'
+  position: absolute
+  bottom: 7px
+  width: 240px
+
+.slick-dots li:nth-child(4)::before
+  content: 'Школа бега'
+  position: absolute
+  bottom: 7px
+  width: 240px
+
+.slick-dots li:nth-child(5)::before
+  content: 'Плавание'
+  position: absolute
+  bottom: 7px
+  width: 240px
+
+.slick-dots li:nth-child(6)::before
+  content: 'Йога'
+  position: absolute
+  bottom: 7px
+  width: 240px
