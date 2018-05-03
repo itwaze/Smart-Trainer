@@ -194,3 +194,33 @@ function initMap() {
 
       }
 initMap();
+
+var timer = new Date(2018, 4, 14, 15);
+
+var time = function() {
+    var today = new Date();
+    today = Math.floor((timer-today)/1000);
+
+    var sec = today%60;
+    today = Math.floor(today/60);
+
+    if (sec < 10) {
+      sec = '0' + sec;
+    }
+
+    var min = today%60;
+    today = Math.floor(today/60);
+
+    if (min < 10) {
+      min = '0' + min;
+    }
+
+    var hour = today%24;
+    today = Math.floor(today/24);
+
+    result = today +" дней "+ hour+":"+min+":"+sec;
+    document.querySelector('.header__timer').innerHTML=result;
+    setTimeout(time,1000);
+}
+
+time();

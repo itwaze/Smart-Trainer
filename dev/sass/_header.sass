@@ -1,81 +1,88 @@
 .header
-  width: 1114px
+  width: 1100px
   margin: auto
-  position: relative
   &__logo
     margin-top: 23px
   &__timer
     text-transform: uppercase
     position: absolute
     top: 30px
-    left: 410px
+    left: 50%
     font-size: 20px
+    transform: translateX(-78px)
     @include RLight
   &__wrapper
-    background: url('../img/bg.png') no-repeat 0 87px
+    background: url('../img/bg.png') no-repeat right 87px
     background-size: cover
-    width: 100vw
-    height: 100vh
-    overflow: hidden
+    width: 100%
+    height: 99vh
   &__content
-    padding-top: 270px
-    margin-left: 470px
-    width: 644px
+    padding-top: 150px
+    margin-left: 560px
+    width: 540px
     color: #fff
     &__title
       @include RLight
-      font-size: 25px
+      font-size: 20px
       text-transform: uppercase
       line-height: 1
     &__subtitle
       @include RBlack
-      font-size: 60px
+      font-size: 51px
       text-transform: uppercase
       line-height: 1.5
-      letter-spacing: 1px
+      letter-spacing: .33px
     &__desc
       @include RLight
       text-transform: uppercase
-      font-size: 24px
+      font-size: 22px
       width: 314px
       line-height: 1.3
-      margin-left: 330px
+      margin-left: 226px
       text-align: right
       margin-bottom: 10px
     &__input
       @include RLight
-      width: 312px
-      height: 55px
+      width: 265px
+      height: 40px
       border: none
-      margin-bottom: 10px
-      font-size: 24px
+      margin-bottom: 7px
       padding-left: 15px
       box-sizing: border-box
       text-transform: uppercase
       &:nth-child(even)
-        margin-right: 15px
+        margin-right: 5px
       &:nth-child(7)
         background-color: #00aeef
         color: #fff
         @include RLight
       &--label
         @include RLight
-        font-size: 20px
-        margin-left: 10px
+        font-size: 14px
+        margin-left: 5px
       &--checkbox
-        transform: scale(2)
-        margin-left: 7px
+        transform: scale(1.3)
+        margin-left: 3px
   &__free
     background-color: #00aeef
     border-radius: 50%
-    width: 210px
-    height: 210px
-    margin: 275px 0 0 894px
+    width: 180px
+    height: 180px
+    margin: 275px 0 0 920px
+    position: absolute
+    bottom: 0
+    z-index: 1001
     &__desc
       color: #fff
       @include RBlack
-      font-size: 16px
-      width: 190px
+      font-size: 12px
+      width: 145px
       text-align: center
       line-height: 2
-      padding: 60px 0 0 10px
+      padding: 55px 0 0 16px
+.whiteline
+  width: 100%
+  height: 50px
+  background-color: #fff
+  position: absolute
+  bottom: 0
